@@ -1,0 +1,50 @@
+extends layout
+block head 
+  script(src='/javascripts/cards.js')
+  script(src='/javascripts/items.js')
+  script(src='/javascripts/common.js')
+block content
+  script formatedDate()
+  div(class='mainmenu menu') 
+    img(class="buttonmainleft" src="/images/add.svg",  onclick='newcard(1)' title='New Card')/
+    div(class='button-color red')
+      img(src="/images/add.svg",  onclick='newcard(2)' title='New Card')/
+    div(class='button-color blue')
+      img(src="/images/add.svg", onclick='newcard(3)' title='New Card')/
+    div(class='button-color blue')
+      img(src="/images/add.svg", onclick='sendmail("senmail")' title='Sendmail')/
+  div(class='maincontent') 
+    each card in cards
+      div(class='card draggable category' + card.categoryId id="card" + card.id name=card.id data-id= + card.id)
+        div(class='content')
+          div(class='title category' + card.categoryId)
+
+            input(placeholder='Enter card Text' class='title category' + card.categoryId id="title"+ card.id data-id= + card.id onblur='savecard(' + card.id + ')' value= card.title)/
+            span(class='subinfo')=card.id
+            img(src="/images/add.svg",  onclick='newItem($(this).closest(".card"),"1")' title='New Item')/
+            img(src="/images/checkmark.svg",  onclick='newItem($(this).closest(".card"),"2")' title='New Checkbox')/
+            div(class='drop-menu' id='drop'+card.id)
+              img(class="buttonright" src="/images/close.png", title="Close menu" onclick='closeMenu(' + card.id + ')')/
+              ul
+                li(onclick='newitem(' + card.id + ')')='Add Item'
+                li(onclick='newitem(' + card.id + ')')='Add Multiline Item'
+                li(onclick='newitem(' + card.id + ')')='Add Picture'
+                li(class='seperator')
+                li(onclick='deletecard(' + card.id + ')')='Delete card'  
+            
+          each item in items
+            if item.cardid==card.id
+              if item.type==1
+                div(class='item type'+ item.type  id="item"+ item.id data-id= + item.id)
+                  div(class='textarea' data-id= + item.id)
+                    textarea(placeholder='Enter item text' id="item"+ item.id data-id= + item.id onblur='saveitem($(this)')=item.content
+                  img(class="delete-button" src="/images/delete.svg", title="Menu" data-id= + item.id onclick='deleteitem($(this))')/
+              if item.type==2
+                div(class='item type'+ item.type  id="item"+ item.id data-id= + item.id)
+                  div(class='checkarea')
+                    input(type='checkbox' checked=item.checked class="checkbox" id="check"+ item.id data-id= + item.id onclick='itemChecked($(this))')/
+                    input(placeholder='Enter item text' class='text' id="item"+ item.id data-id= + item.id onblur='saveitem($(this))' value= item.content)/
+                    img(class="delete-button" src="/images/delete.svg", title="Menu" data-id= + item.id onclick='deleteitem($(this))')/
+
+
+  

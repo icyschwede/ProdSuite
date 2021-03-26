@@ -1,0 +1,43 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(202, 190, 159);
+}
+
+a {
+  color: #00B7FF;
+}
+button{
+  background-color:white;
+  border-radius: 10px;
+  border: 0px;
+  height: 30px;
+}
+
+button:hover{
+  border: orange 2px solid;
+}
+
+h3{
+  color: whitesmoke;
+}
+
+td{
+  border: black 1px solid;
+}
+
+div.card{
+  background-color: blue;
+  border: midnightblue 1px solid;
+  width:200px;
+  height:100px;
+  float: left;
+  margin: 10px 10px 10px 0;
+  border-radius: 10px;
+  padding:10px;  
+
+}
+
+.testresult{
+  background-color: green;
+}

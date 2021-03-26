@@ -1,0 +1,311 @@
+
+@base-color: #00B7FF;
+@item-color: rgb(209, 222, 228);
+@checkbox-item-color: rgb(209, 222, 228);
+@base-menu-color: rgb(232, 239, 255);
+@textarea-color: rgb(243, 224, 202);
+@cat1-color: #00B7FF;
+@cat2-color: rgb(201, 39, 71);
+@cat3-color: rgb(41, 15, 158);
+@cat3-text-color: rgb(238, 237, 243);
+@cat4-color: rgb(247, 162, 65);
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:white;
+  
+}
+.button-color{
+  float: left;
+  height: 25px;
+  width: 25px;
+  border-radius: 90%;
+  margin: 3px 5px 5px 5px;
+  &.red{
+    background-color: @cat2-color;
+  }
+  &.blue{
+    background-color: @cat3-color;
+  }
+  img{
+    background: transparent;
+    width: 25px;
+    height: auto;
+  }
+}
+textarea{
+  resize: vertical;
+  background-color: @textarea-color;
+}
+div.mainmenu{
+  &.menu{
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px #d0d0d0 solid;
+  }
+}
+.drop-menu{
+  width: 100%;
+  background-color: @base-menu-color;
+  position: absolute;
+  left: 25px;
+  top: 12px;
+  width: 300px;
+  display: none;
+  z-index: 100;
+  li{
+    background-color: @base-menu-color;
+    list-style-type: none;
+    &:hover{
+      cursor: pointer;
+      background-color: rgb(240, 178, 8);
+    }
+    &.seperator{
+      border-bottom: darkgray solid 2px;
+      height: 4px;
+      margin-bottom: 2px;
+    }
+
+  }
+}
+.drop-menu-button{
+  float: left;
+  width: 25px;
+  height: 25px;
+}
+
+.maincontent{
+  padding:5px;
+}
+a {
+  color: #00B7FF;
+}
+button{
+  background-color:white;
+  border-radius: 10px;
+  border: 0px;
+  height: 30px;
+}
+
+button:hover{
+  border: orange 2px solid;
+}
+img{
+  border-radius: 90%;
+  background: transparent;
+  &.buttonright{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    float: right;
+    &:hover{
+    background-color: grey;
+    cursor: pointer;
+    }
+  }
+  &.buttonleft{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    float: left;
+    &:hover{
+    background-color: grey;
+    cursor: pointer;
+    }
+  }
+  &.buttonmainleft{
+    width: 25px;
+    height: 25px;
+    margin: 3px 3px 3px 5px;
+    float: left;
+    background-color: #ffa600;
+    &:hover{
+    background-color: grey;
+    cursor: pointer;
+    }
+  }
+}
+td{
+  border: black 1px solid;
+}
+.subinfo{
+  font-size: 9px;
+  float: right;
+}
+div.card{
+  
+  border: rgb(240, 178, 8) 1px solid;
+  position: relative;
+  opacity: 0.8;
+  width:97%;
+  height:100%;
+  float: left;
+  margin: 0px 10px 10px 0;
+  border-radius: 10px;
+  padding:5px;
+  &.category1{
+    background-color: @cat1-color;
+  }
+  &.category2{
+    background-color: @cat2-color;
+  }
+  &.category3{
+    background-color: @cat3-color;
+    color: @cat3-text-color;
+  }
+
+
+  .card-date{
+    line-height: 37px;
+    font-size: 12px;
+  }
+  .menu{
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px grey solid;
+  }
+  .content{
+    width: 100%;
+    padding: 5px;
+    .title{
+      position: relative;
+      font-weight: bold;
+      font-size: 1.2em;
+      width: 98%;
+      background-color: transparent;
+      display: inline-flex;
+      &.category1{
+        background-color: @cat1-color;
+      }
+      &.category2{
+        background-color: @cat2-color;
+      }
+      &.category3{
+        background-color: @cat3-color;
+        color: @cat3-text-color;
+      }
+    
+      img{
+        width: 25px;
+        height: 25px;
+        border-radius: 0;
+      }
+    }
+    label{
+      font-weight: bold;
+    }
+    input{
+      &:focus{
+        background-color:lightgrey;
+      }
+      &:hover{
+        opacity: 0.8;
+        cursor: pointer;
+        background-color: white;
+      }
+      &.text{
+        color:  rgb(19, 173, 109);
+      }
+    }
+  }
+  &:hover{
+    opacity: 1;
+  }  
+  h3{
+    color: darkslategrey;
+  }
+  span.date{
+    color: #032f41;
+    position: absolute;
+    /* bottom: 20px; */
+    right: 10px;
+    /* left: 10px; */
+    font-size: 10px;
+    width: 90%;
+    text-align: right;
+
+  }
+  input{
+
+    border: 0px #00B7FF solid; 
+  }
+}
+
+.item{
+  width: 93%;
+  height: 100%;
+  float: left;
+  margin: 4px 0px 1px 27px;
+  display: inline-flex;
+  .itemcontent{
+    display: inline-block;
+    width: 100%;
+  }
+  p{
+    margin: 2px;
+    padding: 2px;
+  }
+  .textarea{
+    width: 100%;
+    textarea{
+      resize: vertical;
+      background-color: @textarea-color;
+      width: 100%;
+      display: grid;
+    }
+  }
+  .checkarea{
+    background-color: #00B7FF;
+    height: 30px;
+    width: 100%;
+    display: inline-flex;
+    .checkbox{
+      height: 20px;
+      width: 20px;
+      margin: 6px;
+      background-color: #c92747;
+    }
+    .text{
+      line-height: 30px;
+      width: 100%;
+    }
+    image{
+      line-height: 30px;
+    }
+  }
+  .submenu{
+    margin: 5px 0px 0px 10px;
+  }
+  .delete-button{
+    margin:5px;
+    height: 25px;
+  }
+  
+  &.category1{
+    background-color: #00B7FF;
+  }
+  &.category2{
+    background-color: rgb(255, 0, 43);
+  }
+
+  &.category3{
+    background-color: rgb(126, 223, 138);
+  }
+
+  
+}.type1{
+    background-color:@item-color;
+}.type2{
+    background-color: @item-color;
+}
+
+.footer{
+  position: fixed;
+  color: blue;
+  bottom: 10px;
+  right: 10px;
+  font-size: 8px;
+}

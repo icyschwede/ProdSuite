@@ -1,0 +1,25 @@
+extends layout
+include includes/head
+
+.pug
+block head  
+  script
+    $("p").click(function(){
+      //alert("The paragraph was clicked.");
+    });
+block content
+  h1= title
+  p Hallo Olli #{title}
+  p #{name} 's Pug source code!
+  table
+    tr
+      td test 
+        button  'oaf'
+      td neue zelle
+    tr
+      td test1
+      td Test2
+
+
+script alert'test'
+
