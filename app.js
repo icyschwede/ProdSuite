@@ -11,6 +11,7 @@ var newcardRouter = require('./routes/newcard');
 var cardapiRouter = require('./routes/cardapi');
 var itemsRouter = require('./routes/itemsapi');
 var mailRouter = require('./routes/mailapi');
+var calendarRouter = require('./routes/calendar');
 var jquery = require('jquery');
 var expressLess = require('express-less');
 
@@ -38,7 +39,7 @@ app.use('/newcard', newcardRouter);
 app.use('/cardapi', cardapiRouter);
 app.use('/itemsapi', itemsRouter);
 app.use('/mailapi', mailRouter);
-
+app.use('/calendar', calendarRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

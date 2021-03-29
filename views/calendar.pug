@@ -1,0 +1,16 @@
+extends layout
+block head 
+  script(src='/javascripts/datefunctions.js')
+  script(src='/javascripts/items.js')
+  script(src='/javascripts/common.js')
+block content
+  script formatedDate()
+  h1 C a l e n d a r
+  div(class='mainmenu menu') 
+    img(class="buttonmainleft" src="/images/add.svg",  onclick='newcard(1)' title='New Card')/
+    div(class='button-color red')
+  div(class='maincontent') 
+    each item in calendarItems
+
+      div(class='content')
+        div(class='title category')='Datum:' + item.startDate + 'Description: ' + item.description + 'ID=' + item.id
